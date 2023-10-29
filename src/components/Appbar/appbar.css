@@ -1,0 +1,95 @@
+.appbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+.appbar .menu-icon {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.2s ease;
+}
+.appbar .menu-icon:hover {
+  background-color: rgb(184, 184, 184);
+}
+.menu {
+  box-shadow: rgba(0, 0, 0, 1) 0px 10px 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 30px 0;
+  background-color: rgb(184, 184, 184);
+  height: 100vh;
+  width: 40%;
+}
+
+.menu a {
+  color: white;
+  margin: 10px auto;
+  text-decoration: none;
+}
+.menu.dark a {
+  color: rgb(184, 184, 184);
+}
+.menu.dark a.active {
+  color: white;
+}
+.menu.dark a:hover {
+  color: rgb(236, 236, 236);
+}
+.menu a.active {
+  color: black;
+  font-size: 22px;
+  font-weight: bolder;
+}
+.menu a {
+  text-decoration: none;
+  color: rgb(87, 86, 86);
+  margin: 10px auto;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
+}
+.menu a:hover {
+  color: rgb(0, 0, 0);
+}
+.menu .close {
+  transition: 0.3s ease;
+  cursor: pointer;
+  margin: 10px auto;
+}
+.menu .close:hover {
+  color: red;
+}
+.restore-default-setting {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.restore-default-setting:hover {
+  color: red;
+}
+
+/* Responsive */
+@media (max-width: 735px) {
+  .appbar .menu-icon {
+    display: block;
+  }
+
+  .menu {
+    display: flex;
+  }
+}

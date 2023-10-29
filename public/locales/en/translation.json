@@ -1,0 +1,23 @@
+{
+  "welcome": "Welcome",
+  "language": "English",
+  "greeting1": "Good Morning, ",
+  "greeting2": "Good Afternoon, ",
+  "greeting3": "Good Evening, ",
+  "name": "Name:",
+  "theme": "Theme:",
+  "locale": "Locale:",
+  "dark": "Dark Mode",
+  "light": "Light Mode",
+  "english": "English",
+  "farsi": "Farsi",
+  "save": "Save",
+  "searchCity": "Search Your City",
+  "loading": "Loading...",
+  "dashboard": "Dashboard",
+  "todos": "Todos",
+  "weather": "Weather",
+  "profile": "Profile",
+  "error": "Your Location Not Found!",
+  "empty": "Your Todo List Is Empty!"
+}
