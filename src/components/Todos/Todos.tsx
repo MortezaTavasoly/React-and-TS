@@ -64,10 +64,8 @@ export default function Todos() {
     });
   };
   // این قست وظیفه ی حذف یک تودو از لوکال استورج و تودو لیست را دارد
-  const handleRemove = (e: any) => {
-    const itemName =
-      e.target.parentElement.parentElement.parentElement.firstElementChild
-        .textContent;
+  const handleRemove = (obj: TodoObjectType) => {
+    const itemName = obj.title;
 
     setTodoList((prevList: TodoListType) => {
       return prevList.filter((item: TodoObjectType) => {
@@ -113,7 +111,7 @@ export default function Todos() {
 
                 <DeleteIcon
                   fontSize="small"
-                  onClick={handleRemove}
+                  onClick={() => handleRemove(item)}
                   className="delete-btn"
                   data-testid="delete-btn"
                 />
