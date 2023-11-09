@@ -1,6 +1,5 @@
 import "./popup.css";
 
-//  این قسمت تعیین کننده ی مقادیری است که به عنوان پراپس به این کانپوننت داده میشود
 export type PopupProps = {
   name: string;
   setName: any;
@@ -8,8 +7,6 @@ export type PopupProps = {
 };
 
 export default function Popup(props: PopupProps): JSX.Element {
-  // این فانکشن هرگاه سابمیت اتفاق بیفتد اجرا میشود و مقادیر را در لوکال استورج و استیت مربوط به نام ذخیره میکند
-  // واگر خالی باشد قبول نشده و ارور داده میشود
   const handleName = (e: any) => {
     e.preventDefault();
     if (e.target.firstElementChild.firstElementChild.value.trim() !== "") {
