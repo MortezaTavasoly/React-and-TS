@@ -1,12 +1,9 @@
 import { useEffect, useState } from "react";
 import "./profile.css";
-// این قسمت برای دریافت زبان ها وارد شده است
 import i18n from "../../i18n";
 import { useTranslation } from "react-i18next";
-// آیکون مربوط به ادیت نام
 import EditIcon from "@mui/icons-material/Edit";
 
-// این قسمت تعیین کننده مقادیری است که قرار است به این کامپوننت داده بشود
 export type ProfileProps = {
   name: string;
   setName: any;
@@ -18,24 +15,19 @@ export type ProfileProps = {
 };
 
 export default function Profile(props: ProfileProps): JSX.Element {
-  // مقدار پیشفرض زبان در این قسمت ذخیره میشود
   const [locale, setLocale] = useState(i18n.language);
   const { t } = useTranslation();
 
-  //در این قسمت یک ایونت برای زمانی ک زبان عوض شود تعریف شده است که مقدار استیت زبان را تغییر میدهد
   i18n.on("languageChanged", () => setLocale(i18n.language));
-  // این قسمت با هر باری که زمینه یا زبان تغییر کنند اجرا میشود و مقادر درون لوکال استورج را با مقادیر کامپوننت اصلی ذخیره مکند
   useEffect(() => {
     localStorage.setItem("theme", props.mode);
     localStorage.setItem("language", props.language);
   }, [props.mode, props.language]);
 
-  // این قسمت صرفا برای جلوگیری از عمل پیشفرض سابمیت نوشته شده
   const handleSubmit = (e: any) => {
     e.preventDefault();
   };
 
-  // این قسمت زمانی که نام عوض شود مقادیر را در درون لوکال استورج و استیت اصلی تغییر میدهد
 
   const handleName = (e: any) => {
     if (e.target.parentElement.firstElementChild.value.trim() !== "") {
@@ -50,18 +42,15 @@ export default function Profile(props: ProfileProps): JSX.Element {
     }
   };
 
-  // این قسمت وظیفه تغییر زبان صفحه را به عهده دارد
   const handleLanguage = (e: any) => {
     i18n.changeLanguage(e.target.value);
     props.setLanguage(e.target.value);
   };
 
-  // 😁این قسمت برای دکوراسیونه😁
   const handleSave = () => {
     alert("Your data saved!");
   };
 
-  // این قسمت استیت زمینه را در درون کامپوننت اصل نمایش میدهد
   const handleTheme = (mode: string) => {
     props.setMode(mode);
   };
