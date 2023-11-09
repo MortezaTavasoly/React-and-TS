@@ -2,20 +2,15 @@ import "./dashboard.css";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-// این قسمت برای تعیین مقادیری است که به عنوان پراپس به این کامپوننت داده میشود
 export type DashboardProps = {
   name: string;
 };
 
 export default function Dashboard(props: DashboardProps): JSX.Element {
-  // ابجکت دیت برای نمایش ساعت دقیق که متاسفانه یک ساعت برای ما ایرانیا جلو دریافت میشه
-  // تغییرش نمیدم چون برای یوزر های خارج از ایران هم تغییر میکنه
   const date = new Date();
-  // این استیت فرمت خوش آمد را مطابق ساعت روز نشان میدهد
   const [greeting, setGreeting] = useState<string>("");
   const { t } = useTranslation();
 
-  // در اینجا تعیین میشود که در هر ساعت چه پبغامی نمایش داده بشود
   useEffect(() => {
     if (date.getHours() >= 0 && date.getHours() <= 12) {
       const greet1 = t("greeting1");
