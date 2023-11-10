@@ -1,6 +1,5 @@
 import { createContext } from "react";
 
-// در اینجا مقادیر پیشفرض حالت شب و روز وارد شده است
 import { theme } from "./theme";
 
 export type ProviderProps = {
