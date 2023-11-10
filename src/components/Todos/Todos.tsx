@@ -5,16 +5,13 @@ import DoneIcon from "@mui/icons-material/Done";
 import { useTranslation } from "react-i18next";
 import "./todos.css";
 
-// این قسمت تعیین کننده مقادیری است که یک ابجکت تودو شامل ان باید باشد
 type TodoObjectType = {
   title: string;
   completed: boolean;
 };
 
-// این قسمت تعیین کننده ی این است که آرایه ای که تودو ها در آن ذخیره میشود چه فرمتی باشد داشته باشد
 type TodoListType = [TodoObjectType];
 
-// این قسمت مقادیر ذخیره شده در لوکال استورج را بعد از ریفرش بازگردانی میکند
 const getTodoValues = () => {
   const storedValues = localStorage.getItem("todos");
   if (!storedValues) {
@@ -26,14 +23,12 @@ const getTodoValues = () => {
 export default function Todos() {
   const [todoList, setTodoList] = useState(getTodoValues);
   const { t } = useTranslation();
-  // این قسمت هنگامی که مقداری به تودو لیست اضافه یا کم شود در لوکال استورج ذخیره میکند
+  
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todoList));
     localStorage.getItem("todos");
   }, [todoList]);
 
-  // این قسمت هنگام ک سابمیت اتفاق بیفتد مقدار درون کادر را در درون ابجتی قرار میدهد و در درون استیت تودو لیست
-  // اضافه میکند
   const handleSubmit = (e: any) => {
     e.preventDefault();
     if (e.target.firstElementChild.value.trim() !== "") {
@@ -48,7 +43,7 @@ export default function Todos() {
       e.target.firstElementChild.value = "";
     }
   };
-  // این قسمت باعث میشود ک یک تسک حالت انجام شده و یا انجام نشده به خود بگیرد
+  
   const handleCompleted = (itemTitle: string) => {
     setTodoList((prev: TodoListType) => {
       return prev.map((item: TodoObjectType) => {
@@ -63,7 +58,7 @@ export default function Todos() {
       });
     });
   };
-  // این قست وظیفه ی حذف یک تودو از لوکال استورج و تودو لیست را دارد
+  
   const handleRemove = (obj: TodoObjectType) => {
     const itemName = obj.title;
 
