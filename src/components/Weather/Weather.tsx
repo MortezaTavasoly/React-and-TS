@@ -9,12 +9,11 @@ export default function Weather(): JSX.Element {
   const [serachValue, setSearchValue] = useState("");
   const { t } = useTranslation();
 
-  // این کاستوم هوک و با استفاده از این آی پی موقعیت مکانی کاربر را دریافت میکند
   const { data, isLoading, error } = useWeather(
     "http://ip-api.com/json/?fields=country,city,lat,lon,timezone",
     serachValue
   );
-  // این قسمت هنگامی فعال میشود که مقدار درون کادر سرچ سابمیت شود
+
   const handleSubmit = (e: any) => {
     e.preventDefault();
     setSearchValue(e.target.firstElementChild.value);
