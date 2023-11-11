@@ -88,7 +88,7 @@ describe("renderings", () => {
   });
   it("changing language test", () => {
     cy.visit("http://localhost:5173/");
-    cy.get('[data-testid="popup-input"').type("نادین سافت");
+    cy.get('[data-testid="popup-input"').type("مرتضی توسلی");
     cy.get('[data-testid="popup-form"').submit();
     cy.visit("http://localhost:5173/profile");
     cy.get('[data-testid="mode"').select("Dark Mode");
